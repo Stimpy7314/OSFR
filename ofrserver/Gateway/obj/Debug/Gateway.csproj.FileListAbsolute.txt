@@ -1,0 +1,7 @@
+C:\Users\Groax\Desktop\OSFR\bin\Gateway.dll
+C:\Users\Groax\Desktop\OSFR\bin\Gateway.pdb
+C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.csproj.CopyComplete
+C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.dll
+C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.pdb

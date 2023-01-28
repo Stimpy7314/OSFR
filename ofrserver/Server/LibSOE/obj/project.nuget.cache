@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "yiyPULJlUXuU5gMwBMquQ/fOUGehy+jezwVtrgnDwU1I3qAOksIcgA0+OoHdTc8TJ4hOB0cWMCVqY9Zz6SbgtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Groax\\.nuget\\packages\\dotnetzip\\1.16.0\\dotnetzip.1.16.0.nupkg.sha512",
+    "C:\\Users\\Groax\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
+    "C:\\Users\\Groax\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

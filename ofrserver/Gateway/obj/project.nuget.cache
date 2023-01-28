@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MEw/QYtvJMraZSNzk8rfpmW6NYrvvPSZ1ho9EjrvoC29OMWz7eG1FZf/KiG9/2Cn3dT/9aekDbkwHkNEa4bOjQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Gateway\\Gateway.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Groax\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
+    "C:\\Users\\Groax\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

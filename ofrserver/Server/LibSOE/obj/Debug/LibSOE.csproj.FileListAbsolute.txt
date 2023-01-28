@@ -1,0 +1,7 @@
+C:\Users\Groax\Desktop\OSFR\bin\LibSOE.dll
+C:\Users\Groax\Desktop\OSFR\bin\LibSOE.pdb
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.AssemblyReference.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.CoreCompileInputs.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.CopyComplete
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.dll
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.pdb

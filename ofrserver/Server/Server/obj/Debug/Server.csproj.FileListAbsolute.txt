@@ -1,0 +1,9 @@
+C:\Users\Groax\Desktop\OSFR\bin\Config.json
+C:\Users\Groax\Desktop\OSFR\bin\OSFRServer.exe
+C:\Users\Groax\Desktop\OSFR\bin\OSFRServer.pdb
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\OSFRServer.exe
+C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\OSFRServer.pdb
