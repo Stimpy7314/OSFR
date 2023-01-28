@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yiyPULJlUXuU5gMwBMquQ/fOUGehy+jezwVtrgnDwU1I3qAOksIcgA0+OoHdTc8TJ4hOB0cWMCVqY9Zz6SbgtQ==",
+  "dgSpecHash": "YpEAexUeUR0EcDCH50foebhQr7tqCPuHPEjvMHHdcb4kkGUCXuZohTXMmzW3YkpFc7pMVeZQqtDExCfviwjnHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
+  "projectFilePath": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Groax\\.nuget\\packages\\dotnetzip\\1.16.0\\dotnetzip.1.16.0.nupkg.sha512",
     "C:\\Users\\Groax\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",

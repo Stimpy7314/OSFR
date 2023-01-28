@@ -5,3 +5,10 @@ C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.Core
 C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.CopyComplete
 C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.dll
 C:\Users\Groax\Desktop\OSFR\ofrserver\Server\LibSOE\obj\Debug\LibSOE.pdb
+D:\Free Realms Server\bin\LibSOE.dll
+D:\Free Realms Server\bin\LibSOE.pdb
+D:\Free Realms Server\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.AssemblyReference.cache
+D:\Free Realms Server\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.CoreCompileInputs.cache
+D:\Free Realms Server\ofrserver\Server\LibSOE\obj\Debug\LibSOE.csproj.CopyComplete
+D:\Free Realms Server\ofrserver\Server\LibSOE\obj\Debug\LibSOE.dll
+D:\Free Realms Server\ofrserver\Server\LibSOE\obj\Debug\LibSOE.pdb

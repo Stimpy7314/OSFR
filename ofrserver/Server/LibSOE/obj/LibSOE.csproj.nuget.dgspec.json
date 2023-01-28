@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\LibSOE.csproj": {}
+    "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\LibSOE.csproj": {
+    "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
+        "projectUniqueName": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
         "projectName": "LibSOE",
-        "projectPath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
+        "projectPath": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
         "packagesPath": "C:\\Users\\Groax\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\LibSOE\\obj\\",
+        "outputPath": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

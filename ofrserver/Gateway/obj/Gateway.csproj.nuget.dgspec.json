@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Gateway\\Gateway.csproj": {}
+    "D:\\Free Realms Server\\ofrserver\\Gateway\\Gateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Gateway\\Gateway.csproj": {
+    "D:\\Free Realms Server\\ofrserver\\Gateway\\Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Gateway\\Gateway.csproj",
+        "projectUniqueName": "D:\\Free Realms Server\\ofrserver\\Gateway\\Gateway.csproj",
         "projectName": "Gateway",
-        "projectPath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Gateway\\Gateway.csproj",
+        "projectPath": "D:\\Free Realms Server\\ofrserver\\Gateway\\Gateway.csproj",
         "packagesPath": "C:\\Users\\Groax\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Gateway\\obj\\",
+        "outputPath": "D:\\Free Realms Server\\ofrserver\\Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

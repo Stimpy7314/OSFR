@@ -5,3 +5,10 @@ C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.csproj.CoreCompi
 C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.csproj.CopyComplete
 C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.dll
 C:\Users\Groax\Desktop\OSFR\ofrserver\Gateway\obj\Debug\Gateway.pdb
+D:\Free Realms Server\bin\Gateway.dll
+D:\Free Realms Server\bin\Gateway.pdb
+D:\Free Realms Server\ofrserver\Gateway\obj\Debug\Gateway.csproj.AssemblyReference.cache
+D:\Free Realms Server\ofrserver\Gateway\obj\Debug\Gateway.csproj.CoreCompileInputs.cache
+D:\Free Realms Server\ofrserver\Gateway\obj\Debug\Gateway.csproj.CopyComplete
+D:\Free Realms Server\ofrserver\Gateway\obj\Debug\Gateway.dll
+D:\Free Realms Server\ofrserver\Gateway\obj\Debug\Gateway.pdb

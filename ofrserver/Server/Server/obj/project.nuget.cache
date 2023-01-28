@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5PAAqeov9GlI8PQlEHS9QvpMlYiCfA5qSebS8rg2u4SqYF8FVrcO0LsgqQs4ob1mRH6FBKt+LNLfW5iQOvybhg==",
+  "dgSpecHash": "YDJ9wK3kHGQ7Kktee4RcurUmxQC41TH7rSRwEuthMll9WGqcfGtNyzepSsx9S7AViFEDIPoq7nz98rcukgYtww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Groax\\Desktop\\OSFR\\ofrserver\\Server\\Server\\Server.csproj",
+  "projectFilePath": "D:\\Free Realms Server\\ofrserver\\Server\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Groax\\.nuget\\packages\\commandlineparser\\1.9.71\\commandlineparser.1.9.71.nupkg.sha512",
     "C:\\Users\\Groax\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"

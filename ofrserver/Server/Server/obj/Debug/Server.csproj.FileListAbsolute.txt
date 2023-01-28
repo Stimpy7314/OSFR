@@ -7,3 +7,12 @@ C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\Server.csproj.Core
 C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\OSFRServer.exe
 C:\Users\Groax\Desktop\OSFR\ofrserver\Server\Server\obj\Debug\OSFRServer.pdb
+D:\Free Realms Server\bin\Config.json
+D:\Free Realms Server\bin\OSFRServer.exe
+D:\Free Realms Server\bin\OSFRServer.pdb
+D:\Free Realms Server\ofrserver\Server\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+D:\Free Realms Server\ofrserver\Server\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+D:\Free Realms Server\ofrserver\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Free Realms Server\ofrserver\Server\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Free Realms Server\ofrserver\Server\Server\obj\Debug\OSFRServer.exe
+D:\Free Realms Server\ofrserver\Server\Server\obj\Debug\OSFRServer.pdb
