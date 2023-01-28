@@ -86516,7 +86516,7 @@
           {
             "Item1": 0,
             "Item2": {
-              "ItemEmpty": false,
+              "ItemEmpty": true,
               "Icon": 543,
               "Unknown3": 0,
               "ItemName": 422910,
@@ -86536,7 +86536,7 @@
           {
             "Item1": 1,
             "Item2": {
-              "ItemEmpty": false,
+              "ItemEmpty": true,
               "Icon": 777,
               "Unknown3": 0,
               "ItemName": 422913,
@@ -86556,7 +86556,7 @@
           {
             "Item1": 2,
             "Item2": {
-              "ItemEmpty": false,
+              "ItemEmpty": true,
               "Icon": 544,
               "Unknown3": 0,
               "ItemName": 422907,
