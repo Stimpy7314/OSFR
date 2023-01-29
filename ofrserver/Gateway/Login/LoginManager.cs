@@ -71,8 +71,6 @@ namespace Gateway.Login
             string ticket = soeReader.ReadASCIIString();
             ulong playerGUID = soeReader.ReadHostUInt64();
 
-            _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {playerGUID}");
-
             PlayerCode.SendEncounterOverworldCombat(soeClient);
             soeClient.SendMessage(new SOEWriter(new SOEMessage((ushort)ClientGatewayBasePackets.PacketClientIsHosted, StringToByteArray("0700"))).GetFinalSOEMessage(soeClient));
             SendLoginReply(soeClient);
@@ -117,6 +115,8 @@ namespace Gateway.Login
 
                 if (!PlayerCharacters.TryAdd(soeClient.GetClientID(), character))
                     _log.Fatal("Failed to add player character.");
+
+                _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
             } 
             else if (playerGUID == 2)
             {
@@ -140,6 +140,8 @@ namespace Gateway.Login
 
                 if(!PlayerCharacters.TryAdd(soeClient.GetClientID(), character))
                     _log.Fatal("Failed to add player character.");
+
+                _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
             } 
             else if (playerGUID == 3)
             {
@@ -164,6 +166,8 @@ namespace Gateway.Login
 
                 if (!PlayerCharacters.TryAdd(soeClient.GetClientID(), character))
                     _log.Fatal("Failed to add player character.");
+
+                _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
             } 
             else if (playerGUID == 4)
             {
@@ -188,6 +192,8 @@ namespace Gateway.Login
 
                 if (!PlayerCharacters.TryAdd(soeClient.GetClientID(), character))
                     _log.Fatal("Failed to add player character.");
+
+                _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
             } 
             else if (playerGUID == 5)
             {
@@ -212,6 +218,8 @@ namespace Gateway.Login
 
                 if (!PlayerCharacters.TryAdd(soeClient.GetClientID(), character))
                     _log.Fatal("Failed to add player character.");
+
+                _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
             }
         }
 

@@ -262,7 +262,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Groax\\.nuget\\packages\\": {}
+    "C:\\Users\\Groaxy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -270,12 +270,12 @@
       "projectUniqueName": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
       "projectName": "LibSOE",
       "projectPath": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\LibSOE.csproj",
-      "packagesPath": "C:\\Users\\Groax\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Groaxy\\.nuget\\packages\\",
       "outputPath": "D:\\Free Realms Server\\ofrserver\\Server\\LibSOE\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Groax\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Groaxy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

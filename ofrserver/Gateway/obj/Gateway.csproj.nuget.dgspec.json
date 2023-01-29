@@ -10,12 +10,12 @@
         "projectUniqueName": "D:\\Free Realms Server\\ofrserver\\Gateway\\Gateway.csproj",
         "projectName": "Gateway",
         "projectPath": "D:\\Free Realms Server\\ofrserver\\Gateway\\Gateway.csproj",
-        "packagesPath": "C:\\Users\\Groax\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Groaxy\\.nuget\\packages\\",
         "outputPath": "D:\\Free Realms Server\\ofrserver\\Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Groax\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Groaxy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
