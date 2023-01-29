@@ -5,3 +5,4 @@ ofrserver/Server/FreeRealms/obj/*
 ofrserver/Server/LibSOE/obj/*
 ofrserver/Gateway/obj/*
 bin/*
+ofrserver/Customize/PacketSendSelfToClient/Groaxy.json

@@ -222,6 +222,141 @@ namespace Gateway.Player
 
             LoginManager.SendTunneledClientPacket(target, addPc.GetRaw());
         }
+
+        public void SendPacketMountResponse(SOEClient target)
+        {
+            var mount = mounts.Find(x => x.MountGUID != 0);
+
+            if (mount == null)
+                return;
+
+            var mountItemDef = LoginManager.ClientItemDefinitions.Find(mItemDef => mItemDef.Id == mount.MountItemDefinitionID);
+
+            var addMount = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+
+            addMount.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            addMount.AddHostUInt64(mount.MountGUID);
+            addMount.AddHostInt32(mount.MountName);
+            addMount.AddHostInt32(mount.MountModelID);
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(408679);
+            addMount.AddHostInt32(13951728);
+            addMount.AddHostInt32(1);
+            addMount.AddFloat(1.0f);
+
+            addMount.AddFloat(position[0]);
+            addMount.AddFloat(position[1]);
+            addMount.AddFloat(position[2]);
+            addMount.AddFloat(1.0f);
+
+            addMount.AddFloat(rotation[0]);
+            addMount.AddFloat(rotation[1]);
+            addMount.AddFloat(rotation[2]);
+            addMount.AddFloat(0f);
+
+            addMount.AddHostInt32(1);
+            addMount.AddHostInt32(0); // CharacterAttachmentDataCount
+            addMount.AddHostInt32(1);
+
+            addMount.AddASCIIString(mountItemDef.TextureAlias);
+            addMount.AddASCIIString(mount.MountTintAlias);
+            addMount.AddHostInt32(mount.MountTintId);
+            addMount.AddBoolean(true);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddASCIIString(""); // Custom Name
+            addMount.AddBoolean(true); // NameDisabled
+            addMount.AddHostInt32(0);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddHostInt32(0);
+            addMount.AddBoolean(false);
+            addMount.AddFloat(0f);
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(100);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(-1);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+
+            addMount.AddHostInt32(0); // EffectTagsCount
+
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(0);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+            addMount.AddBoolean(false);
+
+            addMount.AddHostInt32(1); // UnknownStruct2
+            addMount.AddASCIIString("");
+            addMount.AddASCIIString("");
+            addMount.AddHostInt32(0);
+            addMount.AddASCIIString("");
+
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(-1);
+            addMount.AddHostInt32(mount.MountIcon);
+            addMount.AddBoolean(true);
+            addMount.AddHostInt64(0);
+            addMount.AddHostInt32(2);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddHostInt32(0); // Target
+
+            addMount.AddHostInt32(0); // CharacterVariables
+
+            addMount.AddHostInt32(0);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddFloat(0.0f); // Unknown54, float[4]
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+
+            addMount.AddHostInt32(0);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddFloat(0.0f);
+            addMount.AddASCIIString("");
+            addMount.AddASCIIString("");
+            addMount.AddASCIIString("");
+            addMount.AddBoolean(false);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(0);
+            addMount.AddHostInt32(3442);
+            addMount.AddFloat(0.0f);
+            addMount.AddHostInt32(0);
+
+            LoginManager.SendTunneledClientPacket(target, addMount.GetRaw());
+
+            var mountResponse = new SOEWriter((ushort)BasePackets.MountBasePacket, true);
+
+            mountResponse.AddByte((byte)MountBasePackets.PacketMountResponse);
+
+            mountResponse.AddHostInt64(playerGUID);
+            mountResponse.AddHostUInt64(mount.MountGUID); // MountGuid
+            mountResponse.AddHostInt32(0);
+            mountResponse.AddHostInt32(1); // Queue Position
+            mountResponse.AddHostInt32(1);
+            mountResponse.AddHostInt32(46);
+            mountResponse.AddHostInt32(0);
+
+            LoginManager.SendTunneledClientPacket(target, mountResponse.GetRaw());
+        }
     }
 }
 

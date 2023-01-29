@@ -236,7 +236,7 @@ namespace Gateway.Login
             switch (opCode)
             {
                 case (ushort)BasePackets.PacketClientIsReady:
-                    HandlePacketClientIsReady(soeClient);
+                    HandlePacketClientIsReady(soeClient, reader);
                     break;
 
                 case (ushort)BasePackets.PlayerUpdatePacketUpdatePosition:
@@ -295,7 +295,7 @@ namespace Gateway.Login
             }
         }
 
-        private static void HandlePacketClientIsReady(SOEClient soeClient)
+        private static void HandlePacketClientIsReady(SOEClient soeClient, SOEReader reader)
         {
             if (!PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var ourCharacter))
                 return;
@@ -322,7 +322,10 @@ namespace Gateway.Login
             // spawn others' characters for our new player
             foreach (var theirCharacter in PlayerCharacters)
                 if (theirCharacter.Value.client != soeClient) // character's client isn't us
+                {
                     theirCharacter.Value.SpawnPcFor(soeClient); // spawn their character for us
+                    theirCharacter.Value.SendPacketMountResponse(soeClient);
+                }
 
             // spawn our character for other players
             foreach (var connectionManagerClient in _server.ConnectionManager.Clients)
