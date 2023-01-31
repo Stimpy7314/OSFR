@@ -34,7 +34,7 @@
         "Logger": {
             "WantColors": true,
             "WantLibraryLogging": true,
-            "Filename": "./Logs/GatewayEventLog-{0:dd-MM-yyyy-hh-mm}.log"
+            "Filename": "./Logs/OSFR.log"
         }
     }
 ]

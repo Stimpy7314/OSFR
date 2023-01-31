@@ -221,6 +221,47 @@ namespace Gateway.Login
 
                 _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
             }
+            else
+            {
+                ClientPcDatas pcData = JsonConvert.DeserializeObject<ClientPcDatas>(File.ReadAllText(fallback), new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                if (overrideName)
+                {
+                    pcData.FirstName = ticket;
+                    pcData.LastName = "";
+                }
+
+                pcData.HairColor = 78;
+                pcData.EyeColor = 54;
+
+                pcData.PlayerPosition[0] = -1881.558f;
+                pcData.PlayerPosition[1] = -46.18418f;
+                pcData.PlayerPosition[2] = 447.8283f;
+
+                pcData.CameraRotation[0] = 0.6998509f;
+                pcData.CameraRotation[1] = 0.0f;
+                pcData.CameraRotation[2] = 0.7142889f;
+
+                var clientPcProfile = pcData.ClientPcProfiles.Find(x => x.JobGUID == pcData.Class);
+
+                clientPcProfile.Items[0].Item2.ItemGUID = 4353;
+                clientPcProfile.Items[1].Item2.ItemGUID = 3339;
+                clientPcProfile.Items[2].Item2.ItemGUID = 3342;
+                clientPcProfile.Items[3].Item2.ItemGUID = 1924;
+                clientPcProfile.Items[4].Item2.ItemGUID = 3341;
+                clientPcProfile.Items[5].Item2.ItemGUID = 3650;
+
+                PlayerCode.SendSelfToClient(soeClient, pcData);
+                PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
+
+                if (!PlayerCharacters.TryAdd(soeClient.GetClientID(), character))
+                    _log.Fatal("Failed to add player character.");
+
+                _log.Info($"Login Request from {soeClient.GetClientAddress()}: - Ticket: {ticket} - GUID: {pcData.PlayerGUID}");
+            }
         }
 
         [SOEMessageHandler("PacketTunneledClientPacket", (ushort)ClientGatewayBasePackets.PacketTunneledClientPacket, "CGAPI_527")]

@@ -1,9 +1,9 @@
 {
   "Unknown": 665338923,
   "PlayerGUID": 1,
-  "PlayerModel": 60,
+  "PlayerModel": 1,
   "PlayerHead": "<race>_<gender>_head_caucasian.adr",
-  "PlayerHair": "<race>_f_hair_longcurly_<hairtype>.adr",
+  "PlayerHair": "<race>_m_hair_forward_<hairtype>.adr",
   "HairColor": 116,
   "EyeColor": 262,
   "Skintone": "skintone3",
