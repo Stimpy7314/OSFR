@@ -193,7 +193,7 @@ namespace Gateway.MapChat
                 setAnimation2.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation2.AddHostInt64(player.playerGUID);
                 setAnimation2.AddHostInt32(3551);
-                setAnimation2.AddHostInt32(5);
+                setAnimation2.AddHostInt32(15);
                 setAnimation2.AddByte(2);
                 BroadcastManager.BroadcastToPlayers(setAnimation2.GetRaw());
 
@@ -232,14 +232,14 @@ namespace Gateway.MapChat
                 placeBoombox2.AddHostInt32(1);
                 placeBoombox2.AddFloat(1.0f);
 
-                placeBoombox2.AddFloat(player.position[0] + 2.4f);
-                placeBoombox2.AddFloat(player.position[1]);
-                placeBoombox2.AddFloat(player.position[2]);
+                placeBoombox2.AddFloat(BoomboxPosition[0]);
+                placeBoombox2.AddFloat(BoomboxPosition[1]);
+                placeBoombox2.AddFloat(BoomboxPosition[2]);
                 placeBoombox2.AddFloat(1.0f);
 
-                placeBoombox2.AddFloat(player.rotation[0]);
-                placeBoombox2.AddFloat(player.rotation[1]);
-                placeBoombox2.AddFloat(player.rotation[2]);
+                placeBoombox2.AddFloat(BoomboxRotation[0]);
+                placeBoombox2.AddFloat(BoomboxRotation[1]);
+                placeBoombox2.AddFloat(BoomboxRotation[2]);
                 placeBoombox2.AddFloat(0.0f);
 
                 placeBoombox2.AddHostInt32(2100);
@@ -335,7 +335,7 @@ namespace Gateway.MapChat
                 setAnimation4.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation4.AddHostInt64(player.playerGUID);
                 setAnimation4.AddHostInt32(3500011);
-                setAnimation4.AddHostInt32(120);
+                setAnimation4.AddHostInt32(15);
                 setAnimation4.AddByte(2);
                 BroadcastManager.BroadcastToPlayers(setAnimation4.GetRaw());
 
@@ -474,8 +474,8 @@ namespace Gateway.MapChat
                 var setAnimation6 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 setAnimation6.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation6.AddHostInt64(player.playerGUID);
-                setAnimation6.AddHostInt32(3500012);
-                setAnimation6.AddHostInt32(120);
+                setAnimation6.AddHostInt32(3200);
+                setAnimation6.AddHostInt32(15);
                 setAnimation6.AddByte(2);
 
                 BroadcastManager.BroadcastToPlayers(setAnimation6.GetRaw());
@@ -617,7 +617,7 @@ namespace Gateway.MapChat
                 setAnimation8.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation8.AddHostInt64(player.playerGUID);
                 setAnimation8.AddHostInt32(3500);
-                setAnimation8.AddHostInt32(120);
+                setAnimation8.AddHostInt32(15);
                 setAnimation8.AddByte(2);
 
                 BroadcastManager.BroadcastToPlayers(setAnimation8.GetRaw());
@@ -759,7 +759,7 @@ namespace Gateway.MapChat
                 setAnimation10.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation10.AddHostInt64(player.playerGUID);
                 setAnimation10.AddHostInt32(3530);
-                setAnimation10.AddHostInt32(120);
+                setAnimation10.AddHostInt32(15);
                 setAnimation10.AddByte(2);
 
                 BroadcastManager.BroadcastToPlayers(setAnimation10.GetRaw());
@@ -901,7 +901,7 @@ namespace Gateway.MapChat
                 setAnimation12.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation12.AddHostInt64(player.playerGUID);
                 setAnimation12.AddHostInt32(3500012);
-                setAnimation12.AddHostInt32(120);
+                setAnimation12.AddHostInt32(15);
                 setAnimation12.AddByte(2);
 
                 BroadcastManager.BroadcastToPlayers(setAnimation12.GetRaw());
@@ -1043,7 +1043,7 @@ namespace Gateway.MapChat
                 setAnimation15.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation15.AddHostInt64(player.playerGUID);
                 setAnimation15.AddHostInt32(3550);
-                setAnimation15.AddHostInt32(120);
+                setAnimation15.AddHostInt32(15);
                 setAnimation15.AddByte(2);
 
                 BroadcastManager.BroadcastToPlayers(setAnimation15.GetRaw());
@@ -1185,7 +1185,7 @@ namespace Gateway.MapChat
                 setAnimation17.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
                 setAnimation17.AddHostInt64(player.playerGUID);
                 setAnimation17.AddHostInt32(3200);
-                setAnimation17.AddHostInt32(120);
+                setAnimation17.AddHostInt32(15);
                 setAnimation17.AddByte(2);
 
                 BroadcastManager.BroadcastToPlayers(setAnimation17.GetRaw());
