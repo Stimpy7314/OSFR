@@ -250,6 +250,7 @@ namespace Gateway.Login
                 case (ushort)BasePackets.PlayerUpdatePacketJump:
                     HandlePlayerUpdatePacketJump(reader);
                     break;
+
                 case (ushort)BasePackets.BaseChatPacket:
                     Chat.HandleBaseChatPacket(soeClient, reader);
                     break;
@@ -440,13 +441,8 @@ namespace Gateway.Login
             var pointOfInterestDefinition = PointOfInterestDefinitions.FirstOrDefault(x => x.Id == zone);
 
             if (pointOfInterestDefinition is null)
-                return;
-       
+                return;    
             {
-                if (zone == 6)
-                {
-                    TeleportToBoatLot(soeClient);
-                } else
                 {
 
                 var soeWriter = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
@@ -473,54 +469,21 @@ namespace Gateway.Login
         }
         public static void HandlePacketZoneSafeTeleportRequest(SOEClient soeClient)
         {
-            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
-            beginZoning.AddASCIIString("FabledRealms");
-            beginZoning.AddHostUInt32(2u);
-            beginZoning.AddFloat(-1904.883f); // X
-            beginZoning.AddFloat(-39.7098f); // Y
-            beginZoning.AddFloat(412.6024f); // Z
-            beginZoning.AddFloat(1f);
-            for (uint num = 0u; num < 4; num++)
-            {
-                beginZoning.AddHostUInt32(20 * num);
-            }
-            beginZoning.AddASCIIString("");
-            beginZoning.AddBoolean(false);
-            beginZoning.AddByte(2);
-            beginZoning.AddHostUInt32(5u);
-            beginZoning.AddHostUInt32(4u);
-            beginZoning.AddHostUInt32(5u);
-            beginZoning.AddBoolean(false);
-            beginZoning.AddBoolean(false);
-            
-            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+            var soeWriter = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
+            soeWriter.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketUpdateLocation);
+            soeWriter.AddFloat(-1414.636f);
+            soeWriter.AddFloat(-27.631f);
+            soeWriter.AddFloat(351.567f);
+            soeWriter.AddFloat(0f);
+            soeWriter.AddFloat(0.0f);
+            soeWriter.AddFloat(0.0f);
+            soeWriter.AddFloat(0.0f);
+            soeWriter.AddFloat(0.0f);
+
+            soeWriter.AddBoolean(true);
+            soeWriter.AddByte(1);
+            SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
         }
-
-        public static void TeleportToBoatLot(SOEClient soeClient)
-        {
-            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
-            beginZoning.AddASCIIString("hsg_emptylot_boat_01");
-            beginZoning.AddHostUInt32(2u);
-            beginZoning.AddFloat(390f); // X
-            beginZoning.AddFloat(33.5f); // Y
-            beginZoning.AddFloat(425f); // Z
-            beginZoning.AddFloat(0f);
-            for (uint num = 0u; num < 4; num++)
-            {
-                beginZoning.AddHostUInt32(20 * num);
-            }
-            beginZoning.AddASCIIString("");
-            beginZoning.AddBoolean(false);
-            beginZoning.AddByte(2);
-            beginZoning.AddHostUInt32(5u);
-            beginZoning.AddHostUInt32(4u);
-            beginZoning.AddHostUInt32(5u);
-            beginZoning.AddBoolean(false);
-            beginZoning.AddBoolean(false);
-
-            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
-        }
-
         public static void HandlePacketGameTimeSync(SOEClient soeClient, SOEReader reader)
         {
             ulong Time = reader.ReadHostUInt64();
@@ -678,11 +641,11 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.BriarwoodMagnitude(PlayerPosition) < 230.0)
+            if (Map.BriarwoodMagnitude(PlayerPosition) < 880.0)
             {
                 poiChange.AddHostInt32(3329); // NameId
                 poiChange.AddHostInt32(3); //ZoneId
-                poiChange.AddHostInt32(290); //Unsure
+                poiChange.AddHostInt32(1178); //Unsure
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 

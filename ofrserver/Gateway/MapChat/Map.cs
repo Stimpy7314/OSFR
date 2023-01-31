@@ -83,9 +83,9 @@ namespace Gateway.MapChat
         public static double BriarwoodMagnitude(float[] pos0)
         {
             return Math.Sqrt(
-                Math.Pow(-933.0994 - pos0[0], 2) +
-                Math.Pow(-33.47968 - pos0[1], 2) +
-                Math.Pow(1901.2840 - pos0[2], 2)
+                Math.Pow(-360.2948 - pos0[0], 2) +
+                Math.Pow(-83.04211 - pos0[1], 2) +
+                Math.Pow(2403.654 - pos0[2], 2)
             );
         }
 
