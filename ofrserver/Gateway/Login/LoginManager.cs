@@ -111,6 +111,7 @@ namespace Gateway.Login
                     TypeNameHandling = TypeNameHandling.Auto
                 });
                 pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
 
@@ -135,6 +136,7 @@ namespace Gateway.Login
                 pcData.PlayerHead = $"{headmapping[randomHead]}";
                 pcData.PlayerHair = $"{femaleHairs[randomFemaleHair]}";
                 pcData.Skintone = $"{skintones[randomSkin]}";
+                pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 pcData.GenderFilter = 2;
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -161,6 +163,7 @@ namespace Gateway.Login
                 pcData.PlayerHair = $"{maleHairs[randomMaleHair]}";
                 pcData.Skintone = $"{skintones[randomSkin]}";
                 pcData.HumanBeardsPixieWings = $"{beards[randomBeard]}";
+                pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 pcData.GenderFilter = 1;
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -187,6 +190,7 @@ namespace Gateway.Login
                 pcData.PlayerHair = $"{maleHairs[randomMaleHair]}";
                 pcData.Skintone = $"{skintones[randomSkin]}";
                 pcData.HumanBeardsPixieWings = $"{malePixieWings[randomMaleWings]}";
+                pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 pcData.GenderFilter = 1;
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -213,6 +217,7 @@ namespace Gateway.Login
                 pcData.PlayerHair = $"{femaleHairs[randomFemaleHair]}";
                 pcData.Skintone = $"{skintones[randomSkin]}";
                 pcData.HumanBeardsPixieWings = $"{femalePixieWings[randomFemaleWings]}";
+                pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 pcData.GenderFilter = 2;
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -237,6 +242,7 @@ namespace Gateway.Login
 
                 pcData.HairColor = 78;
                 pcData.EyeColor = 54;
+                pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
                 pcData.PlayerPosition[0] = -1881.558f;
                 pcData.PlayerPosition[1] = -46.18418f;
@@ -532,7 +538,7 @@ namespace Gateway.Login
             uint Cycle = reader.ReadHostUInt32();
             bool Bool = reader.ReadBoolean();
 
-            _log.Info($"Local Time: {DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()} Server Time: {Time} Cycle: {Cycle}");
+            _log.Info($"Local Time: {DateTimeOffset.UtcNow.ToUnixTimeSeconds()} Server Time: {Time} Cycle: {Cycle}");
 
             var soeWriter = new SOEWriter((ushort)BasePackets.PacketGameTimeSync, true);
 
