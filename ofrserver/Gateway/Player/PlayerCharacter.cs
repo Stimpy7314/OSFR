@@ -17,7 +17,7 @@ namespace Gateway.Player
     public class PlayerCharacter : IDisposable
     {
         public readonly SOEClient client;
-        public readonly uint playerGUID;
+        public readonly ulong playerGUID;
 
         public float[] position;
         public float[] rotation;
@@ -40,7 +40,7 @@ namespace Gateway.Player
         public PlayerCharacter(SOEClient soeClient, ClientPcDatas characterData)
         {
             client = soeClient;
-            playerGUID = (uint)characterData.PlayerGUID;
+            playerGUID = (ulong)characterData.PlayerGUID;
 
             position = new float[3];
             for (int i = 0; i < position.Length; i++)
@@ -347,7 +347,7 @@ namespace Gateway.Player
 
             mountResponse.AddByte((byte)MountBasePackets.PacketMountResponse);
 
-            mountResponse.AddHostInt64(playerGUID);
+            mountResponse.AddHostUInt64(playerGUID);
             mountResponse.AddHostUInt64(mount.MountGUID); // MountGuid
             mountResponse.AddHostInt32(0);
             mountResponse.AddHostInt32(1); // Queue Position

@@ -1373,7 +1373,7 @@ namespace Gateway.Login
         public class ClientPcDatas
         {
             public long Unknown { get; set; }
-            public long PlayerGUID { get; set; }
+            public ulong PlayerGUID { get; set; }
             public int PlayerModel { get; set; }
             public string PlayerHead { get; set; } = string.Empty;
             public string PlayerHair { get; set; } = string.Empty;

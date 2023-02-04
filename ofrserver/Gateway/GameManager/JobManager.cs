@@ -52,7 +52,7 @@ namespace Gateway.GameManager
 
             updatePacketUpdateStat.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
 
-            updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+            updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
             //CharacterStat Count
             updatePacketUpdateStat.AddHostInt32(4);
@@ -248,7 +248,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(9);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -256,7 +256,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(10);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -264,7 +264,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(11);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -272,7 +272,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(12);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -280,7 +280,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(13);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -288,7 +288,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(14);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -296,7 +296,7 @@ namespace Gateway.GameManager
             {
                 var updateWieldType = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 updateWieldType.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketUpdateActiveWieldType);
-                updateWieldType.AddHostInt64(player.playerGUID);
+                updateWieldType.AddHostUInt64(player.playerGUID);
                 updateWieldType.AddHostInt32(0);
                 BroadcastManager.BroadcastToPlayers(updateWieldType.GetRaw());
             }
@@ -360,7 +360,7 @@ namespace Gateway.GameManager
 
             var anime = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             anime.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketSetAnimation);
-            anime.AddHostInt64(player.playerGUID);
+            anime.AddHostUInt64(player.playerGUID);
             anime.AddUInt32(22);
             anime.AddUInt32(0);
             anime.AddByte(2);

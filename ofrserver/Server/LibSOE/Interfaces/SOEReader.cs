@@ -97,10 +97,10 @@ namespace SOE.Interfaces
             return (uint)(buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[0]);
         }
 
-        public uint ReadHostUInt64()
+        public ulong ReadHostUInt64()
         {
             byte[] buffer = ReadBytes(8);
-            return (uint)(buffer[7] << 56 | buffer[6] << 48 | buffer[5] << 40 | buffer[4] << 32 | buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[0]);
+            return (ulong)(buffer[7] << 56 | buffer[6] << 48 | buffer[5] << 40 | buffer[4] << 32 | buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[0]);
         }
 
         public short ReadHostInt16()

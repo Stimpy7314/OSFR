@@ -109,7 +109,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                pcData.PlayerGUID = RandomGUID();
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
 
@@ -124,7 +124,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                pcData.PlayerGUID = RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -149,7 +149,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                pcData.PlayerGUID = RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -175,7 +175,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                pcData.PlayerGUID = RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -201,7 +201,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                pcData.PlayerGUID = RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -227,7 +227,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = soeClient.GetClientID() + 1;
+                pcData.PlayerGUID = RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -531,13 +531,13 @@ namespace Gateway.Login
             uint Cycle = reader.ReadHostUInt32();
             bool Bool = reader.ReadBoolean();
 
-            _log.Info($"Local Time: {DateTimeOffset.Now.ToUniversalTime()} Server Time: {Time} Cycle: {Cycle}");
+            _log.Info($"Local Time: {DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()} Server Time: {Time} Cycle: {Cycle}");
 
             var soeWriter = new SOEWriter((ushort)BasePackets.PacketGameTimeSync, true);
 
-            soeWriter.AddHostUInt64(Time);
+            soeWriter.AddHostInt64(DateTimeOffset.Now.ToUnixTimeSeconds());
             soeWriter.AddHostInt32(8); // Time Cycle
-            soeWriter.AddBoolean(Bool);
+            soeWriter.AddBoolean(false);
 
             SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
         }
@@ -647,6 +647,17 @@ namespace Gateway.Login
             soeWriter.AddByte(Unknown);
 
             BroadcastManager.BroadcastToPlayers(soeWriter.GetRaw());
+
+            if (!PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
+                return;
+
+            _log.InfoFormat($"{player.CharacterData.FirstName}{player.CharacterData.LastName} -> GUID: {player.playerGUID} State: {player.characterState} " +
+                $"Position X: {PlayerPosition[0]} " +
+                $"Position Y: {PlayerPosition[1]} " +
+                $"Position Z: {PlayerPosition[2]} " +
+                $"Rotation X: {PlayerRotation[0]} " +
+                $"Rotation Y: {PlayerRotation[1]} " +
+                $"Rotation Z: {PlayerRotation[2]} ");
 
             var poiChange = new SOEWriter((byte)BasePackets.PacketPOIChangeMessage, true);
 

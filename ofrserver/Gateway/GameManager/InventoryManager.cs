@@ -88,7 +88,7 @@ namespace Gateway.GameManager
 
             var playerEquip = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             playerEquip.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
-            playerEquip.AddHostInt64(player.playerGUID);
+            playerEquip.AddHostUInt64(player.playerGUID);
             playerEquip.AddHostInt32(clientItem.Guid);
             playerEquip.AddASCIIString(clientItemDef.ModelName);
             playerEquip.AddASCIIString(clientItemDef.TextureAlias);
@@ -222,7 +222,7 @@ namespace Gateway.GameManager
 
             var playerEquip = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             playerEquip.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketEquipItemChange);
-            playerEquip.AddHostInt64(player.playerGUID);
+            playerEquip.AddHostUInt64(player.playerGUID);
             playerEquip.AddHostInt32(0);
             playerEquip.AddASCIIString("");
             playerEquip.AddASCIIString("");

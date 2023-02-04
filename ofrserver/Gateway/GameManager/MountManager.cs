@@ -159,7 +159,7 @@ namespace Gateway.GameManager
 
             mountResponse.AddByte((byte)MountBasePackets.PacketMountResponse);
 
-            mountResponse.AddHostInt64(player.playerGUID);
+            mountResponse.AddHostUInt64(player.playerGUID);
             mountResponse.AddHostUInt64(mount.MountGUID); // MountGuid
             mountResponse.AddHostInt32(0);
             mountResponse.AddHostInt32(1); // Queue Position
@@ -173,7 +173,7 @@ namespace Gateway.GameManager
             {
                 var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
                 updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
-                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+                updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
                 // CharacterStat Count
                 updatePacketUpdateStat.AddHostInt32(9);
 
@@ -226,7 +226,7 @@ namespace Gateway.GameManager
             {
                 var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
                 updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
-                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+                updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
                 // CharacterStat Count
                 updatePacketUpdateStat.AddHostInt32(1);
@@ -248,7 +248,7 @@ namespace Gateway.GameManager
             {
                 var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
                 updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
-                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+                updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
                 // CharacterStat Count
                 updatePacketUpdateStat.AddHostInt32(2);
@@ -274,7 +274,7 @@ namespace Gateway.GameManager
             {
                 var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
                 updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
-                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+                updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
                 updatePacketUpdateStat.AddHostInt32(8);
 
                 updatePacketUpdateStat.AddHostInt32(2);
@@ -322,7 +322,7 @@ namespace Gateway.GameManager
             {
                 var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
                 updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
-                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+                updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
                 // CharacterStat Count
                 updatePacketUpdateStat.AddHostInt32(1);
@@ -344,7 +344,7 @@ namespace Gateway.GameManager
             {
                 var updatePacketUpdateStat = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
                 updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
-                updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+                updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
                 // CharacterStat Count
                 updatePacketUpdateStat.AddHostInt32(1);
@@ -394,7 +394,7 @@ namespace Gateway.GameManager
 
             disMount.AddByte((byte)MountBasePackets.PacketDismountResponse);
 
-            disMount.AddHostInt64(player.playerGUID);
+            disMount.AddHostUInt64(player.playerGUID);
             disMount.AddHostInt32(46);
 
             BroadcastManager.BroadcastToPlayers(disMount.GetRaw());
@@ -403,7 +403,7 @@ namespace Gateway.GameManager
 
             updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
 
-            updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+            updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
             // CharacterStat Count
             updatePacketUpdateStat.AddHostInt32(3);

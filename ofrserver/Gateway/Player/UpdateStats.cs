@@ -54,7 +54,7 @@ namespace Gateway.Player
 
             updatePacketUpdateStat.AddHostUInt16((byte)BaseClientUpdatePackets.ClientUpdatePacketUpdateStat);
 
-            updatePacketUpdateStat.AddHostInt64(player.playerGUID);
+            updatePacketUpdateStat.AddHostUInt64(player.playerGUID);
 
             // CharacterStat Count
             updatePacketUpdateStat.AddHostInt32(3);
