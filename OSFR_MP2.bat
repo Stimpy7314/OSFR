@@ -45,7 +45,7 @@ If "%gender%" == "Female" (
        set guid=4
     )
 ) else (
-   set guid=6816812
+   set guid=18446744073709551615
 )
 
 @echo Starting FreeRealms...
