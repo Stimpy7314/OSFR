@@ -60,7 +60,7 @@ namespace Gateway.GameManager
             if (!LoginManager.PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
                 return;
 
-            var newGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+            var newGUID = GUIDRandomizer.RandomGUID();
             var activePet = player.activePet;
             activePet.PetId = petId;
             activePet.PetGUID = newGUID;

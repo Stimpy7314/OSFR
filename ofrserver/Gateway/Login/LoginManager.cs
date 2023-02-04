@@ -110,7 +110,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.PlayerGUID = GUIDRandomizer.RandomGUID();
                 pcData.AccountBirthday = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -126,7 +126,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.PlayerGUID = GUIDRandomizer.RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -152,7 +152,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.PlayerGUID = GUIDRandomizer.RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -179,7 +179,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.PlayerGUID = GUIDRandomizer.RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -206,7 +206,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.PlayerGUID = GUIDRandomizer.RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;
@@ -233,7 +233,7 @@ namespace Gateway.Login
                 {
                     TypeNameHandling = TypeNameHandling.Auto
                 });
-                pcData.PlayerGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                pcData.PlayerGUID = GUIDRandomizer.RandomGUID();
                 if (overrideName)
                 {
                     pcData.FirstName = ticket;

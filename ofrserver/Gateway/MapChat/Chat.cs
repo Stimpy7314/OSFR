@@ -78,7 +78,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox1")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox1 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 placeBoombox1.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
@@ -220,7 +220,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox2")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox2 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 placeBoombox2.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
@@ -360,7 +360,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox3")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox3 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
                 placeBoombox3.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
@@ -501,7 +501,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox4")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox4 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
@@ -643,7 +643,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox5")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox5 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
@@ -785,7 +785,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox6")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox6 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
@@ -927,7 +927,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox7")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox7 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
@@ -1069,7 +1069,7 @@ namespace Gateway.MapChat
 
             if (message == "boombox8")
             {
-                var GUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+                var GUID = GUIDRandomizer.RandomGUID();
 
                 var placeBoombox8 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
