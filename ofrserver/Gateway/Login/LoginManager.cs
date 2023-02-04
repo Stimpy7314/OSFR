@@ -292,11 +292,11 @@ namespace Gateway.Login
                     break;
 
                 case (ushort)BasePackets.PlayerUpdatePacketCameraUpdate:
-                    HandlePlayerUpdatePacketCameraUpdate(reader);
+                    HandlePlayerUpdatePacketCameraUpdate(soeClient, reader);
                     break;
 
                 case (ushort)BasePackets.PlayerUpdatePacketJump:
-                    HandlePlayerUpdatePacketJump(reader);
+                    HandlePlayerUpdatePacketJump(soeClient, reader);
                     break;
 
                 case (ushort)BasePackets.BaseChatPacket:
@@ -578,9 +578,12 @@ namespace Gateway.Login
             }
         }
 
-        public static void HandlePlayerUpdatePacketJump(SOEReader reader)
+        public static void HandlePlayerUpdatePacketJump(SOEClient soeClient, SOEReader reader)
         {
-            ulong PlayerGUID = reader.ReadHostUInt64();
+            if (!LoginManager.PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
+                return;
+
+            _ = reader.ReadHostUInt64();
             float[] PlayerPosition = new float[3];
             for (var i = 0; i < PlayerPosition.Length; i++)
                 PlayerPosition[i] = reader.ReadSingle();
@@ -592,11 +595,11 @@ namespace Gateway.Login
             float JumpHeight = reader.ReadSingle();
 
             var playerJump = new SOEWriter((ushort)BasePackets.PlayerUpdatePacketJump, true);
-            playerJump.AddHostUInt64(PlayerGUID);
+            playerJump.AddHostUInt64(player.playerGUID);
             for (var i = 0; i < 3; i++)
-                playerJump.AddFloat(PlayerPosition[i]);
+                playerJump.AddFloat(player.position[i]);
             for (var i = 0; i < 3; i++)
-                playerJump.AddFloat(PlayerRotation[i]);
+                playerJump.AddFloat(player.rotation[i]);
 
             playerJump.AddHostUInt16(CharacterState);
             playerJump.AddFloat(JumpHeight);
@@ -604,15 +607,18 @@ namespace Gateway.Login
             BroadcastManager.BroadcastToPlayers(playerJump.GetRaw());
         }
 
-        public static void HandlePlayerUpdatePacketCameraUpdate(SOEReader reader)
+        public static void HandlePlayerUpdatePacketCameraUpdate(SOEClient soeClient, SOEReader reader)
         {
-            var PlayerGUID = reader.ReadHostUInt64();
+            if (!LoginManager.PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
+                return;
+
+            _ = reader.ReadHostUInt64();
             float[] Camera = new float[4];
             for (var i = 0; i < Camera.Length; i++)
                 Camera[i] = reader.ReadSingle();
 
             var updateCamera = new SOEWriter((ushort)BasePackets.PlayerUpdatePacketCameraUpdate, true);
-            updateCamera.AddHostUInt64(PlayerGUID);
+            updateCamera.AddHostUInt64(player.playerGUID);
             for (var i = 0; i < 3; i++)
                 updateCamera.AddFloat(Camera[i]);
             BroadcastManager.BroadcastToPlayers(updateCamera.GetRaw());
@@ -620,7 +626,7 @@ namespace Gateway.Login
 
         public static void HandlePlayerUpdatePacketUpdatePosition(SOEClient soeClient, SOEReader reader)
         {
-            var PlayerGUID = reader.ReadHostUInt64();
+            _ = reader.ReadHostUInt64();
             float[] PlayerPosition = new float[3];
             for (var i = 0; i < PlayerPosition.Length; i++)
                 PlayerPosition[i] = reader.ReadSingle();
@@ -642,29 +648,18 @@ namespace Gateway.Login
             }
 
             var soeWriter = new SOEWriter((ushort)BasePackets.PlayerUpdatePacketUpdatePosition, true);
-            soeWriter.AddHostUInt64(PlayerGUID);
+            soeWriter.AddHostUInt64(character.playerGUID);
 
             for (var i = 0; i < 3; i++)
-                soeWriter.AddFloat(PlayerPosition[i]);
+                soeWriter.AddFloat(character.position[i]);
 
             for (var i = 0; i < 3; i++)
-                soeWriter.AddFloat(PlayerRotation[i]);
+                soeWriter.AddFloat(character.rotation[i]);
 
             soeWriter.AddByte(CharacterState);
             soeWriter.AddByte(Unknown);
 
             BroadcastManager.BroadcastToPlayers(soeWriter.GetRaw());
-
-            if (!PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
-                return;
-
-            _log.InfoFormat($"{player.CharacterData.FirstName}{player.CharacterData.LastName} -> GUID: {player.playerGUID} State: {player.characterState} " +
-                $"Position X: {PlayerPosition[0]} " +
-                $"Position Y: {PlayerPosition[1]} " +
-                $"Position Z: {PlayerPosition[2]} " +
-                $"Rotation X: {PlayerRotation[0]} " +
-                $"Rotation Y: {PlayerRotation[1]} " +
-                $"Rotation Z: {PlayerRotation[2]} ");
 
             var poiChange = new SOEWriter((byte)BasePackets.PacketPOIChangeMessage, true);
 

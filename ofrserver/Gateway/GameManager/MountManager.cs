@@ -43,7 +43,7 @@ namespace Gateway.GameManager
             var mount = player.mounts.Find(x => x.MountNumber == guid);
             var mountItemDef = LoginManager.ClientItemDefinitions.Find(mItemDef => mItemDef.Id == mount.MountItemDefinitionID);
 
-            mount.MountGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
+            mount.MountGUID = GUIDRandomizer.RandomGUID();
 
             var addMount = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
