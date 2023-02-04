@@ -4,6 +4,7 @@ using SOE;
 using SOE.Core;
 using SOE.Interfaces;
 using System;
+using Gateway.NonGameRelatedManagers;
 
 namespace Gateway.GameManager
 {
@@ -59,7 +60,7 @@ namespace Gateway.GameManager
             if (!LoginManager.PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
                 return;
 
-            var newGUID = GUIDManager.createNewGUID();
+            var newGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
             var activePet = player.activePet;
             activePet.PetId = petId;
             activePet.PetGUID = newGUID;

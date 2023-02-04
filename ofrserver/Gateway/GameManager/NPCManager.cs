@@ -2,6 +2,7 @@
 using SOE.Interfaces;
 using SOE;
 using Gateway.Login;
+using Gateway.NonGameRelatedManagers;
 
 
 namespace Gateway.GameManager
@@ -12,7 +13,7 @@ namespace Gateway.GameManager
         {
             var penguinBert = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             penguinBert.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            penguinBert.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            penguinBert.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             penguinBert.AddHostInt32(432135); // Name ID
             penguinBert.AddHostInt32(21); // Model ID
             penguinBert.AddBoolean(false); // Unknown4
@@ -125,7 +126,7 @@ namespace Gateway.GameManager
 
             var penguinErnie = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             penguinErnie.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            penguinErnie.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            penguinErnie.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             penguinErnie.AddHostInt32(432135); // Name ID
             penguinErnie.AddHostInt32(31); // Model ID
             penguinErnie.AddBoolean(false); // Unknown4
@@ -238,7 +239,7 @@ namespace Gateway.GameManager
 
             var candiIvy = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             candiIvy.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            candiIvy.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            candiIvy.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             candiIvy.AddHostInt32(9455); // Name ID
             candiIvy.AddHostInt32(45); // Model ID
             candiIvy.AddBoolean(false); // Unknown4
@@ -351,7 +352,7 @@ namespace Gateway.GameManager
 
             var chipnumbWing = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             chipnumbWing.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            chipnumbWing.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            chipnumbWing.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             chipnumbWing.AddHostInt32(320984); // Name ID
             chipnumbWing.AddHostInt32(1585); // Model ID
             chipnumbWing.AddBoolean(false); // Unknown4
@@ -468,7 +469,7 @@ namespace Gateway.GameManager
             //Briarheart
             var addBhWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBhWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBhWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addBhWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addBhWarpstone.AddHostInt32(24730); // Name ID
             addBhWarpstone.AddHostInt32(280); // Model ID
             addBhWarpstone.AddBoolean(false); // Unknown4
@@ -580,7 +581,7 @@ namespace Gateway.GameManager
             //Bristlewood
             var addBswWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBswWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBswWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addBswWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addBswWarpstone.AddHostInt32(390361); // Name ID
             addBswWarpstone.AddHostInt32(280); // Model ID
             addBswWarpstone.AddBoolean(false); // Unknown4
@@ -692,7 +693,7 @@ namespace Gateway.GameManager
             //Briarwood
             var addBwWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBwWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBwWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addBwWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addBwWarpstone.AddHostInt32(20832); // Name ID
             addBwWarpstone.AddHostInt32(280); // Model ID
             addBwWarpstone.AddBoolean(false); // Unknown4
@@ -804,7 +805,7 @@ namespace Gateway.GameManager
             //Greenwood
             var addGwWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addGwWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addGwWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addGwWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addGwWarpstone.AddHostInt32(428994); // Name ID
             addGwWarpstone.AddHostInt32(280); // Model ID
             addGwWarpstone.AddBoolean(false); // Unknown4
@@ -916,7 +917,7 @@ namespace Gateway.GameManager
             //Merry Vale
             var addMvWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addMvWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addMvWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addMvWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addMvWarpstone.AddHostInt32(41303); // Name ID
             addMvWarpstone.AddHostInt32(280); // Model ID
             addMvWarpstone.AddBoolean(false); // Unknown4
@@ -1028,7 +1029,7 @@ namespace Gateway.GameManager
             //Lavender Coast
             var addLcWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addLcWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addLcWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addLcWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addLcWarpstone.AddHostInt32(41304); // Name ID
             addLcWarpstone.AddHostInt32(280); // Model ID
             addLcWarpstone.AddBoolean(false); // Unknown4
@@ -1140,7 +1141,7 @@ namespace Gateway.GameManager
             //Cobblestone Village
             var addCvWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addCvWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addCvWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addCvWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addCvWarpstone.AddHostInt32(20247); // Name ID
             addCvWarpstone.AddHostInt32(280); // Model ID
             addCvWarpstone.AddBoolean(false); // Unknown4
@@ -1252,7 +1253,7 @@ namespace Gateway.GameManager
             //Lakeshore
             var addLsWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addLsWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addLsWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addLsWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addLsWarpstone.AddHostInt32(41298); // Name ID
             addLsWarpstone.AddHostInt32(280); // Model ID
             addLsWarpstone.AddBoolean(false); // Unknown4
@@ -1364,7 +1365,7 @@ namespace Gateway.GameManager
             //Shrouded Glade
             var addSdgWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addSdgWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addSdgWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addSdgWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addSdgWarpstone.AddHostInt32(41297); // Name ID
             addSdgWarpstone.AddHostInt32(280); // Model ID
             addSdgWarpstone.AddBoolean(false); // Unknown4
@@ -1476,7 +1477,7 @@ namespace Gateway.GameManager
             //Highroad Junction
             var addHjWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addHjWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addHjWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addHjWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addHjWarpstone.AddHostInt32(104037); // Name ID
             addHjWarpstone.AddHostInt32(280); // Model ID
             addHjWarpstone.AddBoolean(false); // Unknown4
@@ -1588,7 +1589,7 @@ namespace Gateway.GameManager
             //Wugachug
             var addWcWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addWcWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addWcWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addWcWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addWcWarpstone.AddHostInt32(41301); // Name ID
             addWcWarpstone.AddHostInt32(280); // Model ID
             addWcWarpstone.AddBoolean(false); // Unknown4
@@ -1700,7 +1701,7 @@ namespace Gateway.GameManager
             //Seaside
             var addSsWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addSsWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addSsWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addSsWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addSsWarpstone.AddHostInt32(41302); // Name ID
             addSsWarpstone.AddHostInt32(280); // Model ID
             addSsWarpstone.AddBoolean(false); // Unknown4
@@ -1812,7 +1813,7 @@ namespace Gateway.GameManager
             //Sanctuary
             var addSgWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addSgWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addSgWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addSgWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addSgWarpstone.AddHostInt32(20831); // Name ID
             addSgWarpstone.AddHostInt32(280); // Model ID
             addSgWarpstone.AddBoolean(false); // Unknown4
@@ -1924,7 +1925,7 @@ namespace Gateway.GameManager
             //Snowhill
             var addShWarpstone = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addShWarpstone.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addShWarpstone.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addShWarpstone.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addShWarpstone.AddHostInt32(20830); // Name ID
             addShWarpstone.AddHostInt32(280); // Model ID
             addShWarpstone.AddBoolean(false); // Unknown4
@@ -2052,7 +2053,7 @@ namespace Gateway.GameManager
         {
             var addKWarpWatcher = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addKWarpWatcher.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addKWarpWatcher.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addKWarpWatcher.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addKWarpWatcher.AddHostInt32(384749); // Name ID
             addKWarpWatcher.AddHostInt32(468); // Model ID
             addKWarpWatcher.AddBoolean(false); // Unknown4
@@ -2163,7 +2164,7 @@ namespace Gateway.GameManager
 
             var addVWarpWatcher = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addVWarpWatcher.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addVWarpWatcher.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addVWarpWatcher.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addVWarpWatcher.AddHostInt32(130731); // Name ID
             addVWarpWatcher.AddHostInt32(468); // Model ID
             addVWarpWatcher.AddBoolean(false); // Unknown4
@@ -2277,7 +2278,7 @@ namespace Gateway.GameManager
 
             var addBoombox1 = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addBoombox1.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addBoombox1.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addBoombox1.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addBoombox1.AddHostInt32(18044); // Name ID
             addBoombox1.AddHostInt32(185); // Model ID
             addBoombox1.AddBoolean(false); // Unknown4
@@ -2390,7 +2391,7 @@ namespace Gateway.GameManager
 
             var addShBoombox = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             addShBoombox.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            addShBoombox.AddHostUInt64(LoginManager.RandomGUID()); // Guid
+            addShBoombox.AddHostUInt64(NonGameRelatedManagers.GUIDRandomizer.RandomGUID()); // Guid
             addShBoombox.AddHostInt32(18044); // Name ID
             addShBoombox.AddHostInt32(185); // Model ID
             addShBoombox.AddBoolean(false); // Unknown4

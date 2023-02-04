@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameManager\BroadcastManager.cs" />
-    <Compile Include="GameManager\GUIDManager.cs" />
     <Compile Include="GameManager\InventoryManager.cs" />
     <Compile Include="GameManager\JobManager.cs" />
     <Compile Include="GameManager\MountManager.cs" />
@@ -65,6 +64,7 @@
     <Compile Include="Login\ClientPcData.cs" />
     <Compile Include="MapChat\Chat.cs" />
     <Compile Include="MapChat\Map.cs" />
+    <Compile Include="NonGameRelatedManagers\GUIDRandomizer.cs" />
     <Compile Include="Player\PlayerCharacter.cs" />
     <Compile Include="Player\PlayerCode.cs" />
     <Compile Include="Player\UpdateStats.cs" />

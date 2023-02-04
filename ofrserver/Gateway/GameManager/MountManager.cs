@@ -3,6 +3,7 @@ using SOE.Interfaces;
 using SOE;
 using Gateway.Login;
 using Gateway.Player;
+using Gateway.NonGameRelatedManagers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Gateway.GameManager
             var mount = player.mounts.Find(x => x.MountNumber == guid);
             var mountItemDef = LoginManager.ClientItemDefinitions.Find(mItemDef => mItemDef.Id == mount.MountItemDefinitionID);
 
-            mount.MountGUID = LoginManager.RandomGUID();
+            mount.MountGUID = NonGameRelatedManagers.GUIDRandomizer.RandomGUID();
 
             var addMount = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
 
