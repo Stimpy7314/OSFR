@@ -354,6 +354,7 @@ namespace Gateway.Login
             Chat.SendQuickChatPacket(soeClient);
             Map.SendPacketPointOfInterestDefinitionReply(soeClient);
             NPCManager.SendPlayerUpdatePacketAddNpc(soeClient);
+            NPCManager2.SendPlayerUpdatePacketAddNpc(soeClient);
             NPCManager.SendWarpStones(soeClient);
             NPCManager.SendWarpWatchers(soeClient);
             UpdateStats.SendClientUpdatePacketHitpoints(soeClient);
