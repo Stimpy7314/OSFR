@@ -3180,119 +3180,6 @@ namespace Gateway.GameManager
 
             LoginManager.SendTunneledClientPacket(soeClient, RickyDanger.GetRaw());
 
-            var PetTrainer = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
-            PetTrainer.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
-            PetTrainer.AddHostUInt64(GUIDRandomizer.RandomGUID()); // Guid
-            PetTrainer.AddHostInt32(432135); // Name ID
-            PetTrainer.AddHostInt32(878); // Model ID
-            PetTrainer.AddBoolean(false); // Unknown4
-            PetTrainer.AddHostInt32(408679); // Unknown5
-            PetTrainer.AddHostInt32(13951728); // Unknown6
-            PetTrainer.AddHostInt32(1); // Unknown7
-            PetTrainer.AddFloat(1.0f); // Unknown8
-
-            // Position
-            PetTrainer.AddFloat(-1846.177f);
-            PetTrainer.AddFloat(-41.49669f);
-            PetTrainer.AddFloat(470.3021f);
-            PetTrainer.AddFloat(1.0f);
-
-            //Rotation
-            PetTrainer.AddFloat(-0.8567502f);
-            PetTrainer.AddFloat(0f);
-            PetTrainer.AddFloat(-0.5157315f);
-            PetTrainer.AddFloat(0f);
-
-            PetTrainer.AddHostInt32(0); // Unknown11
-
-            PetTrainer.AddHostInt32(0); // CharacterAttachmentDataCount
-            PetTrainer.AddHostInt32(1); // Unknown12
-
-            PetTrainer.AddASCIIString(""); // TextureAlias
-            PetTrainer.AddASCIIString(""); // TintAlias
-            PetTrainer.AddHostInt32(0); // TintId
-            PetTrainer.AddBoolean(true); // Unknown16
-            PetTrainer.AddFloat(-0.1f); // Unknown17
-            PetTrainer.AddHostInt32(0); // Unknown18
-            PetTrainer.AddHostInt32(0); // Unknown19
-            PetTrainer.AddASCIIString("Pet Trainer"); // Custom Name
-            PetTrainer.AddBoolean(false); // NameDisabled
-            PetTrainer.AddHostInt32(0); // Unknown22
-            PetTrainer.AddFloat(0.0f); // Unknown23
-            PetTrainer.AddFloat(0.0f); // Unknown24
-            PetTrainer.AddHostInt32(0); // Unknown25
-            PetTrainer.AddBoolean(false); // Unknown26
-            PetTrainer.AddFloat(0.0f); // Unknown27
-            PetTrainer.AddBoolean(false); // Unknown28
-            PetTrainer.AddHostInt32(100); // Unknown29
-            PetTrainer.AddHostInt32(-1); // Unknown
-            PetTrainer.AddHostInt32(-1); // Unknown
-            PetTrainer.AddHostInt32(-1); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddHostInt32(-1); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-
-            PetTrainer.AddHostInt32(0); // EffectTagsCount
-
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-
-            PetTrainer.AddHostInt32(0); // UnknownStruct2
-            PetTrainer.AddASCIIString("");
-            PetTrainer.AddASCIIString("");
-            PetTrainer.AddHostInt32(0);
-            PetTrainer.AddASCIIString("");
-
-            PetTrainer.AddFloat(0.0f);
-            PetTrainer.AddFloat(0.0f);
-            PetTrainer.AddFloat(0.0f);
-            PetTrainer.AddFloat(0.0f);
-
-            PetTrainer.AddHostInt32(0);
-            PetTrainer.AddHostInt32(-1);
-            PetTrainer.AddHostInt32(0);
-            PetTrainer.AddBoolean(true);
-            PetTrainer.AddHostUInt64(0);
-            PetTrainer.AddHostInt32(2);
-            PetTrainer.AddFloat(0.0f);
-
-            PetTrainer.AddHostInt32(0); // Target
-
-            PetTrainer.AddHostInt32(0); // CharacterVariables
-
-            PetTrainer.AddHostInt32(0);
-            PetTrainer.AddFloat(0.0f);
-
-            PetTrainer.AddFloat(0.0f); // Unknown54, float[4]
-            PetTrainer.AddFloat(0.0f);
-            PetTrainer.AddFloat(0.0f);
-            PetTrainer.AddFloat(0.0f);
-
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddFloat(0.0f); // Unknown
-            PetTrainer.AddFloat(0.0f); // Unknown
-            PetTrainer.AddFloat(0.0f); // Unknown
-            PetTrainer.AddASCIIString(""); // Unknown
-            PetTrainer.AddASCIIString(""); // Unknown
-            PetTrainer.AddASCIIString(""); // Unknown
-            PetTrainer.AddBoolean(false); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddHostInt32(8); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-            PetTrainer.AddHostInt32(3442); // Unknown
-            PetTrainer.AddFloat(0.0f); // Unknown
-            PetTrainer.AddHostInt32(0); // Unknown
-
-            LoginManager.SendTunneledClientPacket(soeClient, PetTrainer.GetRaw());
-
             var Boranug = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
             Boranug.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
             Boranug.AddHostUInt64(GUIDRandomizer.RandomGUID()); // Guid
@@ -4684,7 +4571,7 @@ namespace Gateway.GameManager
             MailBox3.AddFloat(-0.1f); // Unknown17
             MailBox3.AddHostInt32(0); // Unknown18
             MailBox3.AddHostInt32(0); // Unknown19
-            MailBox3.AddASCIIString("Mailbox"); // Custom Name
+            MailBox3.AddASCIIString("Sanctuary Postboxes"); // Custom Name
             MailBox3.AddBoolean(false); // NameDisabled
             MailBox3.AddHostInt32(0); // Unknown22
             MailBox3.AddFloat(0.0f); // Unknown23
