@@ -2180,9 +2180,9 @@ namespace Gateway.GameManager
             addVWarpWatcher.AddFloat(1.0f);
 
             //Rotation
-            addVWarpWatcher.AddFloat(0.46704218f);
+            addVWarpWatcher.AddFloat(-0.8741506f);
             addVWarpWatcher.AddFloat(0f);
-            addVWarpWatcher.AddFloat(-0.884235f);
+            addVWarpWatcher.AddFloat(-0.4856548f);
             addVWarpWatcher.AddFloat(0f);
 
             addVWarpWatcher.AddHostInt32(1); // Unknown11
@@ -2308,7 +2308,7 @@ namespace Gateway.GameManager
             addBoombox1.AddASCIIString(""); // TintAlias
             addBoombox1.AddHostInt32(0); // TintId
             addBoombox1.AddBoolean(true); // Unknown16
-            addBoombox1.AddFloat(-0.1f); // Unknown17
+            addBoombox1.AddFloat(0f); // Unknown17
             addBoombox1.AddHostInt32(0); // Unknown18
             addBoombox1.AddHostInt32(0); // Unknown19
             addBoombox1.AddASCIIString(""); // Custom Name
@@ -2421,7 +2421,7 @@ namespace Gateway.GameManager
             addShBoombox.AddASCIIString(""); // TintAlias
             addShBoombox.AddHostInt32(0); // TintId
             addShBoombox.AddBoolean(true); // Unknown16
-            addShBoombox.AddFloat(-0.1f); // Unknown17
+            addShBoombox.AddFloat(0f); // Unknown17
             addShBoombox.AddHostInt32(0); // Unknown18
             addShBoombox.AddHostInt32(0); // Unknown19
             addShBoombox.AddASCIIString(""); // Custom Name
@@ -2525,16 +2525,16 @@ namespace Gateway.GameManager
             Betsy.AddFloat(0.8943964f);
             Betsy.AddFloat(0f);
 
-            Betsy.AddHostInt32(0); // Unknown11
+            Betsy.AddHostInt32(3333); // Unknown11
 
             Betsy.AddHostInt32(0); // CharacterAttachmentDataCount
             Betsy.AddHostInt32(1); // Unknown12
 
             Betsy.AddASCIIString(""); // TextureAlias
             Betsy.AddASCIIString(""); // TintAlias
-            Betsy.AddHostInt32(0); // TintId
+            Betsy.AddHostInt32(25); // TintId
             Betsy.AddBoolean(true); // Unknown16
-            Betsy.AddFloat(-0.1f); // Unknown17
+            Betsy.AddFloat(0f); // Unknown17
             Betsy.AddHostInt32(0); // Unknown18
             Betsy.AddHostInt32(0); // Unknown19
             Betsy.AddASCIIString("Betsy"); // Custom Name
@@ -2552,7 +2552,7 @@ namespace Gateway.GameManager
             Betsy.AddHostInt32(-1); // Unknown
             Betsy.AddBoolean(false); // Unknown
             Betsy.AddBoolean(false); // Unknown
-            Betsy.AddHostInt32(-1); // Unknown
+            Betsy.AddHostInt32(9); // Unknown
             Betsy.AddHostInt32(0); // Unknown
             Betsy.AddHostInt32(0); // Unknown
 
@@ -2638,7 +2638,7 @@ namespace Gateway.GameManager
             FarmerCoin1.AddFloat(0.8730898f);
             FarmerCoin1.AddFloat(0f);
 
-            FarmerCoin1.AddHostInt32(0); // Unknown11
+            FarmerCoin1.AddHostInt32(1); // Unknown11
 
             FarmerCoin1.AddHostInt32(0); // CharacterAttachmentDataCount
             FarmerCoin1.AddHostInt32(1); // Unknown12
@@ -2647,7 +2647,7 @@ namespace Gateway.GameManager
             FarmerCoin1.AddASCIIString(""); // TintAlias
             FarmerCoin1.AddHostInt32(0); // TintId
             FarmerCoin1.AddBoolean(true); // Unknown16
-            FarmerCoin1.AddFloat(-0.1f); // Unknown17
+            FarmerCoin1.AddFloat(0f); // Unknown17
             FarmerCoin1.AddHostInt32(0); // Unknown18
             FarmerCoin1.AddHostInt32(0); // Unknown19
             FarmerCoin1.AddASCIIString("Coin Farmer Muglap"); // Custom Name
@@ -3090,7 +3090,7 @@ namespace Gateway.GameManager
             RickyDanger.AddFloat(-0.2515248f);
             RickyDanger.AddFloat(0f);
 
-            RickyDanger.AddHostInt32(0); // Unknown11
+            RickyDanger.AddHostInt32(1); // Unknown11
 
             RickyDanger.AddHostInt32(0); // CharacterAttachmentDataCount
             RickyDanger.AddHostInt32(1); // Unknown12
@@ -3099,7 +3099,7 @@ namespace Gateway.GameManager
             RickyDanger.AddASCIIString(""); // TintAlias
             RickyDanger.AddHostInt32(0); // TintId
             RickyDanger.AddBoolean(true); // Unknown16
-            RickyDanger.AddFloat(-0.1f); // Unknown17
+            RickyDanger.AddFloat(0f); // Unknown17
             RickyDanger.AddHostInt32(0); // Unknown18
             RickyDanger.AddHostInt32(0); // Unknown19
             RickyDanger.AddASCIIString("Ricky Danger"); // Custom Name
@@ -3203,7 +3203,7 @@ namespace Gateway.GameManager
             Boranug.AddFloat(0.09205777f);
             Boranug.AddFloat(0f);
 
-            Boranug.AddHostInt32(0); // Unknown11
+            Boranug.AddHostInt32(1); // Unknown11
 
             Boranug.AddHostInt32(0); // CharacterAttachmentDataCount
             Boranug.AddHostInt32(1); // Unknown12
@@ -3212,7 +3212,7 @@ namespace Gateway.GameManager
             Boranug.AddASCIIString(""); // TintAlias
             Boranug.AddHostInt32(0); // TintId
             Boranug.AddBoolean(true); // Unknown16
-            Boranug.AddFloat(-0.1f); // Unknown17
+            Boranug.AddFloat(0f); // Unknown17
             Boranug.AddHostInt32(0); // Unknown18
             Boranug.AddHostInt32(0); // Unknown19
             Boranug.AddASCIIString("Boranug"); // Custom Name
@@ -3316,7 +3316,7 @@ namespace Gateway.GameManager
             Mumpalot.AddFloat(-0.9997969f);
             Mumpalot.AddFloat(0f);
 
-            Mumpalot.AddHostInt32(0); // Unknown11
+            Mumpalot.AddHostInt32(1); // Unknown11
 
             Mumpalot.AddHostInt32(0); // CharacterAttachmentDataCount
             Mumpalot.AddHostInt32(1); // Unknown12
@@ -3325,7 +3325,7 @@ namespace Gateway.GameManager
             Mumpalot.AddASCIIString(""); // TintAlias
             Mumpalot.AddHostInt32(0); // TintId
             Mumpalot.AddBoolean(true); // Unknown16
-            Mumpalot.AddFloat(-0.1f); // Unknown17
+            Mumpalot.AddFloat(0f); // Unknown17
             Mumpalot.AddHostInt32(0); // Unknown18
             Mumpalot.AddHostInt32(0); // Unknown19
             Mumpalot.AddASCIIString("Mumpalot"); // Custom Name
@@ -3655,7 +3655,7 @@ namespace Gateway.GameManager
             Thoomug.AddFloat(0.9997754f);
             Thoomug.AddFloat(0f);
 
-            Thoomug.AddHostInt32(0); // Unknown11
+            Thoomug.AddHostInt32(1); // Unknown11
 
             Thoomug.AddHostInt32(0); // CharacterAttachmentDataCount
             Thoomug.AddHostInt32(1); // Unknown12
@@ -3664,7 +3664,7 @@ namespace Gateway.GameManager
             Thoomug.AddASCIIString(""); // TintAlias
             Thoomug.AddHostInt32(0); // TintId
             Thoomug.AddBoolean(true); // Unknown16
-            Thoomug.AddFloat(-0.1f); // Unknown17
+            Thoomug.AddFloat(0f); // Unknown17
             Thoomug.AddHostInt32(0); // Unknown18
             Thoomug.AddHostInt32(0); // Unknown19
             Thoomug.AddASCIIString("Guard Thoomug"); // Custom Name
@@ -3768,7 +3768,7 @@ namespace Gateway.GameManager
             Lazi.AddFloat(-0.9602285f);
             Lazi.AddFloat(0f);
 
-            Lazi.AddHostInt32(0); // Unknown11
+            Lazi.AddHostInt32(1); // Unknown11
 
             Lazi.AddHostInt32(0); // CharacterAttachmentDataCount
             Lazi.AddHostInt32(1); // Unknown12
@@ -3777,7 +3777,7 @@ namespace Gateway.GameManager
             Lazi.AddASCIIString(""); // TintAlias
             Lazi.AddHostInt32(0); // TintId
             Lazi.AddBoolean(true); // Unknown16
-            Lazi.AddFloat(-0.1f); // Unknown17
+            Lazi.AddFloat(0f); // Unknown17
             Lazi.AddHostInt32(0); // Unknown18
             Lazi.AddHostInt32(0); // Unknown19
             Lazi.AddASCIIString("Lazi"); // Custom Name
@@ -4116,7 +4116,7 @@ namespace Gateway.GameManager
             FairyFarmer.AddASCIIString(""); // TintAlias
             FairyFarmer.AddHostInt32(0); // TintId
             FairyFarmer.AddBoolean(true); // Unknown16
-            FairyFarmer.AddFloat(-0.1f); // Unknown17
+            FairyFarmer.AddFloat(0f); // Unknown17
             FairyFarmer.AddHostInt32(0); // Unknown18
             FairyFarmer.AddHostInt32(0); // Unknown19
             FairyFarmer.AddASCIIString(""); // Custom Name
@@ -4220,7 +4220,7 @@ namespace Gateway.GameManager
             RoyalGuard1.AddFloat(0.006336713f);
             RoyalGuard1.AddFloat(0f);
 
-            RoyalGuard1.AddHostInt32(0); // Unknown11
+            RoyalGuard1.AddHostInt32(1); // Unknown11
 
             RoyalGuard1.AddHostInt32(0); // CharacterAttachmentDataCount
             RoyalGuard1.AddHostInt32(1); // Unknown12
@@ -4229,7 +4229,7 @@ namespace Gateway.GameManager
             RoyalGuard1.AddASCIIString(""); // TintAlias
             RoyalGuard1.AddHostInt32(0); // TintId
             RoyalGuard1.AddBoolean(true); // Unknown16
-            RoyalGuard1.AddFloat(-0.1f); // Unknown17
+            RoyalGuard1.AddFloat(0f); // Unknown17
             RoyalGuard1.AddHostInt32(0); // Unknown18
             RoyalGuard1.AddHostInt32(0); // Unknown19
             RoyalGuard1.AddASCIIString("Royal Guard"); // Custom Name
@@ -4333,7 +4333,7 @@ namespace Gateway.GameManager
             FarmerCoin2.AddFloat(-0.9047171f);
             FarmerCoin2.AddFloat(0f);
 
-            FarmerCoin2.AddHostInt32(0); // Unknown11
+            FarmerCoin2.AddHostInt32(1); // Unknown11
 
             FarmerCoin2.AddHostInt32(0); // CharacterAttachmentDataCount
             FarmerCoin2.AddHostInt32(1); // Unknown12
@@ -4342,7 +4342,7 @@ namespace Gateway.GameManager
             FarmerCoin2.AddASCIIString(""); // TintAlias
             FarmerCoin2.AddHostInt32(0); // TintId
             FarmerCoin2.AddBoolean(true); // Unknown16
-            FarmerCoin2.AddFloat(-0.1f); // Unknown17
+            FarmerCoin2.AddFloat(0f); // Unknown17
             FarmerCoin2.AddHostInt32(0); // Unknown18
             FarmerCoin2.AddHostInt32(0); // Unknown19
             FarmerCoin2.AddASCIIString("Coin Farmer Dang Dang"); // Custom Name
@@ -4446,7 +4446,7 @@ namespace Gateway.GameManager
             RoyalGuard2.AddFloat(-0.9277773f);
             RoyalGuard2.AddFloat(0f);
 
-            RoyalGuard2.AddHostInt32(0); // Unknown11
+            RoyalGuard2.AddHostInt32(1); // Unknown11
 
             RoyalGuard2.AddHostInt32(0); // CharacterAttachmentDataCount
             RoyalGuard2.AddHostInt32(1); // Unknown12
@@ -4455,7 +4455,7 @@ namespace Gateway.GameManager
             RoyalGuard2.AddASCIIString(""); // TintAlias
             RoyalGuard2.AddHostInt32(0); // TintId
             RoyalGuard2.AddBoolean(true); // Unknown16
-            RoyalGuard2.AddFloat(-0.1f); // Unknown17
+            RoyalGuard2.AddFloat(0f); // Unknown17
             RoyalGuard2.AddHostInt32(0); // Unknown18
             RoyalGuard2.AddHostInt32(0); // Unknown19
             RoyalGuard2.AddASCIIString("Guard Soapdragon"); // Custom Name
