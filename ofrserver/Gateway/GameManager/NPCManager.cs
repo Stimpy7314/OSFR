@@ -2531,8 +2531,8 @@ namespace Gateway.GameManager
             Betsy.AddHostInt32(1); // Unknown12
 
             Betsy.AddASCIIString(""); // TextureAlias
-            Betsy.AddASCIIString(""); // TintAlias
-            Betsy.AddHostInt32(25); // TintId
+            Betsy.AddASCIIString("pumpkin"); // TintAlias
+            Betsy.AddHostInt32(1); // TintId
             Betsy.AddBoolean(true); // Unknown16
             Betsy.AddFloat(0f); // Unknown17
             Betsy.AddHostInt32(0); // Unknown18
@@ -2552,7 +2552,7 @@ namespace Gateway.GameManager
             Betsy.AddHostInt32(-1); // Unknown
             Betsy.AddBoolean(false); // Unknown
             Betsy.AddBoolean(false); // Unknown
-            Betsy.AddHostInt32(9); // Unknown
+            Betsy.AddHostInt32(0); // Unknown
             Betsy.AddHostInt32(0); // Unknown
             Betsy.AddHostInt32(0); // Unknown
 

@@ -2724,6 +2724,231 @@ namespace Gateway.GameManager
 
             LoginManager.SendTunneledClientPacket(soeClient, ChugawugMiner.GetRaw());
 
+            var Chatty = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            Chatty.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            Chatty.AddHostUInt64(GUIDRandomizer.RandomGUID()); // Guid
+            Chatty.AddHostInt32(432135); // Name ID
+            Chatty.AddHostInt32(376); // Model ID
+            Chatty.AddBoolean(false); // Unknown4
+            Chatty.AddHostInt32(408679); // Unknown5
+            Chatty.AddHostInt32(13951728); // Unknown6
+            Chatty.AddHostInt32(1); // Unknown7
+            Chatty.AddFloat(1.0f); // Unknown8
+
+            // Position
+            Chatty.AddFloat(-1555.957f);
+            Chatty.AddFloat(-40.64807f);
+            Chatty.AddFloat(-625.8187f);
+            Chatty.AddFloat(1.0f);
+
+            //Rotation
+            Chatty.AddFloat(0.2340431f);
+            Chatty.AddFloat(0f);
+            Chatty.AddFloat(0.9722263f);
+            Chatty.AddFloat(0f);
+
+            Chatty.AddHostInt32(1); // Unknown11
+
+            Chatty.AddHostInt32(0); // CharacterAttachmentDataCount
+            Chatty.AddHostInt32(1); // Unknown12
+
+            Chatty.AddASCIIString(""); // TextureAlias
+            Chatty.AddASCIIString("pumpkin"); // TintAlias
+            Chatty.AddHostInt32(1); // TintId
+            Chatty.AddBoolean(true); // Unknown16
+            Chatty.AddFloat(0f); // Unknown17
+            Chatty.AddHostInt32(0); // Unknown18
+            Chatty.AddHostInt32(0); // Unknown19
+            Chatty.AddASCIIString("Chatty"); // Custom Name
+            Chatty.AddBoolean(false); // NameDisabled
+            Chatty.AddHostInt32(0); // Unknown22
+            Chatty.AddFloat(0.0f); // Unknown23
+            Chatty.AddFloat(0.0f); // Unknown24
+            Chatty.AddHostInt32(0); // Unknown25
+            Chatty.AddBoolean(false); // Unknown26
+            Chatty.AddFloat(0.0f); // Unknown27
+            Chatty.AddBoolean(false); // Unknown28
+            Chatty.AddHostInt32(100); // Unknown29
+            Chatty.AddHostInt32(-1); // Unknown
+            Chatty.AddHostInt32(-1); // Unknown
+            Chatty.AddHostInt32(-1); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddHostInt32(-1); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+
+            Chatty.AddHostInt32(0); // EffectTagsCount
+
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+
+            Chatty.AddHostInt32(0); // UnknownStruct2
+            Chatty.AddASCIIString("");
+            Chatty.AddASCIIString("");
+            Chatty.AddHostInt32(0);
+            Chatty.AddASCIIString("");
+
+            Chatty.AddFloat(0.0f);
+            Chatty.AddFloat(0.0f);
+            Chatty.AddFloat(0.0f);
+            Chatty.AddFloat(0.0f);
+
+            Chatty.AddHostInt32(0);
+            Chatty.AddHostInt32(-1);
+            Chatty.AddHostInt32(0);
+            Chatty.AddBoolean(true);
+            Chatty.AddHostUInt64(0);
+            Chatty.AddHostInt32(2);
+            Chatty.AddFloat(0.0f);
+
+            Chatty.AddHostInt32(0); // Target
+
+            Chatty.AddHostInt32(0); // CharacterVariables
+
+            Chatty.AddHostInt32(0);
+            Chatty.AddFloat(0.0f);
+
+            Chatty.AddFloat(0.0f); // Unknown54, float[4]
+            Chatty.AddFloat(0.0f);
+            Chatty.AddFloat(0.0f);
+            Chatty.AddFloat(0.0f);
+
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddFloat(0.0f); // Unknown
+            Chatty.AddFloat(0.0f); // Unknown
+            Chatty.AddFloat(0.0f); // Unknown
+            Chatty.AddASCIIString(""); // Unknown
+            Chatty.AddASCIIString(""); // Unknown
+            Chatty.AddASCIIString(""); // Unknown
+            Chatty.AddBoolean(false); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddHostInt32(8); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+            Chatty.AddHostInt32(3442); // Unknown
+            Chatty.AddFloat(0.0f); // Unknown
+            Chatty.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, Chatty.GetRaw());
+
+            var Hilforn = new SOEWriter((ushort)BasePackets.BasePlayerUpdatePacket, true);
+            Hilforn.AddHostUInt16((ushort)BasePlayerUpdatePackets.PlayerUpdatePacketAddNpc);
+            Hilforn.AddHostUInt64(GUIDRandomizer.RandomGUID()); // Guid
+            Hilforn.AddHostInt32(432135); // Name ID
+            Hilforn.AddHostInt32(214); // Model ID
+            Hilforn.AddBoolean(false); // Unknown4
+            Hilforn.AddHostInt32(408679); // Unknown5
+            Hilforn.AddHostInt32(13951728); // Unknown6
+            Hilforn.AddHostInt32(1); // Unknown7
+            Hilforn.AddFloat(1.0f); // Unknown8
+
+            // Position
+            Hilforn.AddFloat(-1564.097f);
+            Hilforn.AddFloat(-32.27134f);
+            Hilforn.AddFloat(-658.3897f);
+            Hilforn.AddFloat(1.0f);
+
+            //Rotation
+            Hilforn.AddFloat(-0.1412534f);
+            Hilforn.AddFloat(0f);
+            Hilforn.AddFloat(0.9899734f);
+            Hilforn.AddFloat(0f);
+
+            Hilforn.AddHostInt32(1); // Unknown11
+
+            Hilforn.AddHostInt32(0); // CharacterAttachmentDataCount
+            Hilforn.AddHostInt32(1); // Unknown12
+
+            Hilforn.AddASCIIString(""); // TextureAlias
+            Hilforn.AddASCIIString(""); // TintAlias
+            Hilforn.AddHostInt32(0); // TintId
+            Hilforn.AddBoolean(true); // Unknown16
+            Hilforn.AddFloat(0f); // Unknown17
+            Hilforn.AddHostInt32(0); // Unknown18
+            Hilforn.AddHostInt32(0); // Unknown19
+            Hilforn.AddASCIIString("Hilforn"); // Custom Name
+            Hilforn.AddBoolean(false); // NameDisabled
+            Hilforn.AddHostInt32(0); // Unknown22
+            Hilforn.AddFloat(0.0f); // Unknown23
+            Hilforn.AddFloat(0.0f); // Unknown24
+            Hilforn.AddHostInt32(0); // Unknown25
+            Hilforn.AddBoolean(false); // Unknown26
+            Hilforn.AddFloat(0.0f); // Unknown27
+            Hilforn.AddBoolean(false); // Unknown28
+            Hilforn.AddHostInt32(100); // Unknown29
+            Hilforn.AddHostInt32(-1); // Unknown
+            Hilforn.AddHostInt32(-1); // Unknown
+            Hilforn.AddHostInt32(-1); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddHostInt32(-1); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+
+            Hilforn.AddHostInt32(0); // EffectTagsCount
+
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+
+            Hilforn.AddHostInt32(0); // UnknownStruct2
+            Hilforn.AddASCIIString("");
+            Hilforn.AddASCIIString("");
+            Hilforn.AddHostInt32(0);
+            Hilforn.AddASCIIString("");
+
+            Hilforn.AddFloat(0.0f);
+            Hilforn.AddFloat(0.0f);
+            Hilforn.AddFloat(0.0f);
+            Hilforn.AddFloat(0.0f);
+
+            Hilforn.AddHostInt32(0);
+            Hilforn.AddHostInt32(-1);
+            Hilforn.AddHostInt32(0);
+            Hilforn.AddBoolean(true);
+            Hilforn.AddHostUInt64(0);
+            Hilforn.AddHostInt32(2);
+            Hilforn.AddFloat(0.0f);
+
+            Hilforn.AddHostInt32(0); // Target
+
+            Hilforn.AddHostInt32(0); // CharacterVariables
+
+            Hilforn.AddHostInt32(0);
+            Hilforn.AddFloat(0.0f);
+
+            Hilforn.AddFloat(0.0f); // Unknown54, float[4]
+            Hilforn.AddFloat(0.0f);
+            Hilforn.AddFloat(0.0f);
+            Hilforn.AddFloat(0.0f);
+
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddFloat(0.0f); // Unknown
+            Hilforn.AddFloat(0.0f); // Unknown
+            Hilforn.AddFloat(0.0f); // Unknown
+            Hilforn.AddASCIIString(""); // Unknown
+            Hilforn.AddASCIIString(""); // Unknown
+            Hilforn.AddASCIIString(""); // Unknown
+            Hilforn.AddBoolean(false); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddHostInt32(8); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+            Hilforn.AddHostInt32(3442); // Unknown
+            Hilforn.AddFloat(0.0f); // Unknown
+            Hilforn.AddHostInt32(0); // Unknown
+
+            LoginManager.SendTunneledClientPacket(soeClient, Hilforn.GetRaw());
         }
     }
 }
