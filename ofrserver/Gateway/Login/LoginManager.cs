@@ -252,14 +252,12 @@ namespace Gateway.Login
                 pcData.CameraRotation[1] = 0.0f;
                 pcData.CameraRotation[2] = 0.7142889f;
 
-                var clientPcProfile = pcData.ClientPcProfiles.Find(x => x.JobGUID == pcData.Class);
-
-                clientPcProfile.Items[0].Item2.ItemGUID = 4353;
-                clientPcProfile.Items[1].Item2.ItemGUID = 3339;
-                clientPcProfile.Items[2].Item2.ItemGUID = 3342;
-                clientPcProfile.Items[3].Item2.ItemGUID = 1924;
-                clientPcProfile.Items[4].Item2.ItemGUID = 3341;
-                clientPcProfile.Items[5].Item2.ItemGUID = 3650;
+                pcData.ClientPcProfiles[0].Items[0].Item2.ItemGUID = 4353;
+                pcData.ClientPcProfiles[0].Items[1].Item2.ItemGUID = 3339;
+                pcData.ClientPcProfiles[0].Items[2].Item2.ItemGUID = 3342;
+                pcData.ClientPcProfiles[0].Items[3].Item2.ItemGUID = 1924;
+                pcData.ClientPcProfiles[0].Items[4].Item2.ItemGUID = 3341;
+                pcData.ClientPcProfiles[0].Items[5].Item2.ItemGUID = 3650;
 
                 PlayerCode.SendSelfToClient(soeClient, pcData);
                 PlayerCharacter character = new PlayerCharacter(soeClient, pcData);
@@ -488,11 +486,21 @@ namespace Gateway.Login
 
             var pointOfInterestDefinition = PointOfInterestDefinitions.FirstOrDefault(x => x.Id == zone);
 
+            if (!LoginManager.PlayerCharacters.TryGetValue(soeClient.GetClientID(), out var player))
+                return;
+
             if (pointOfInterestDefinition is null)
                 return;
-            {
-                {
 
+            if (player.CharacterData.Unknown == 665338923)
+            {
+                if (pointOfInterestDefinition.Id == 54)
+                {
+                    TeleportToLot(soeClient);
+                    player.CharacterData.Unknown = 665338922;
+                }
+                else
+                {
                     var soeWriter = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
 
                     soeWriter.AddHostUInt16((ushort)BaseClientUpdatePackets.ClientUpdatePacketUpdateLocation);
@@ -511,10 +519,60 @@ namespace Gateway.Login
                     soeWriter.AddByte(1);
 
                     SendTunneledClientPacket(soeClient, soeWriter.GetRaw());
-
                 }
+            } else
+            {
+                SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+                beginZoning.AddASCIIString("FabledRealms");
+                beginZoning.AddHostUInt32(2u);
+                beginZoning.AddFloat(pointOfInterestDefinition.X);
+                beginZoning.AddFloat(pointOfInterestDefinition.Y);
+                beginZoning.AddFloat(pointOfInterestDefinition.Z);
+                beginZoning.AddFloat(pointOfInterestDefinition.Heading);
+                for (uint num = 0u; num < 4; num++)
+                {
+                    beginZoning.AddHostUInt32(20 * num);
+                }
+                beginZoning.AddASCIIString("");
+                beginZoning.AddBoolean(false);
+                beginZoning.AddByte(2);
+                beginZoning.AddHostUInt32(5u);
+                beginZoning.AddHostUInt32(4u);
+                beginZoning.AddHostUInt32(5u);
+                beginZoning.AddBoolean(false);
+                beginZoning.AddBoolean(false);
+
+                SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+
+                player.CharacterData.Unknown = 665338923;
             }
         }
+
+        public static void TeleportToLot(SOEClient soeClient)
+        {
+            SOEWriter beginZoning = new SOEWriter((ushort)BasePackets.PacketClientBeginZoning, true);
+            beginZoning.AddASCIIString("sg_shop_interior_01");
+            beginZoning.AddHostUInt32(2u);
+            beginZoning.AddFloat(336.025f); // X
+            beginZoning.AddFloat(3.535f); // z
+            beginZoning.AddFloat(337.75f); // Y
+            beginZoning.AddFloat(0f);
+            for (uint num = 0u; num < 4; num++)
+            {
+                beginZoning.AddHostUInt32(20 * num);
+            }
+            beginZoning.AddASCIIString("");
+            beginZoning.AddBoolean(false);
+            beginZoning.AddByte(2);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddHostUInt32(4u);
+            beginZoning.AddHostUInt32(5u);
+            beginZoning.AddBoolean(false);
+            beginZoning.AddBoolean(false);
+
+            SendTunneledClientPacket(soeClient, beginZoning.GetRaw());
+        }
+
         public static void HandlePacketZoneSafeTeleportRequest(SOEClient soeClient)
         {
             var soeWriter = new SOEWriter((ushort)BasePackets.BaseClientUpdatePacket, true);
@@ -656,14 +714,20 @@ namespace Gateway.Login
             for (var i = 0; i < 3; i++)
                 soeWriter.AddFloat(character.rotation[i]);
 
-            soeWriter.AddByte(CharacterState);
-            soeWriter.AddByte(Unknown);
+            soeWriter.AddByte(character.characterState);
+            soeWriter.AddByte(character.unknown);
 
             BroadcastManager.BroadcastToPlayers(soeWriter.GetRaw());
 
+            _log.InfoFormat($"Position X: {PlayerPosition[0]} " +
+                            $"Position Z: {PlayerPosition[1]} " +
+                            $"Position Y: {PlayerPosition[2]} " +
+                            $"Rotation X: {PlayerRotation[0]} " +
+                            $"Rotation Y: {PlayerRotation[2]} ");
+
             var poiChange = new SOEWriter((byte)BasePackets.PacketPOIChangeMessage, true);
 
-            if (Map.inBlackspore(PlayerPosition))
+            if (Map.inBlackspore(character.position))
             {
                 poiChange.AddHostInt32(3500); // NameId
                 poiChange.AddHostInt32(2); //ZoneId
@@ -671,7 +735,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.inSanctuary(PlayerPosition))
+            if (Map.inSanctuary(character.position))
             {
                 poiChange.AddHostInt32(3499); // NameId
                 poiChange.AddHostInt32(5); //ZoneId
@@ -679,7 +743,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.inSeaside(PlayerPosition))
+            if (Map.inSeaside(character.position))
             {
                 poiChange.AddHostInt32(3501); // NameId
                 poiChange.AddHostInt32(6); //ZoneId
@@ -687,7 +751,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.MerryValeMagnitude(PlayerPosition) < 290.0)
+            if (Map.MerryValeMagnitude(character.position) < 290.0)
             {
                 poiChange.AddHostInt32(3961); // NameId
                 poiChange.AddHostInt32(4); //ZoneId
@@ -695,7 +759,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.BriarwoodMagnitude(PlayerPosition) < 880.0)
+            if (Map.BriarwoodMagnitude(character.position) < 880.0)
             {
                 poiChange.AddHostInt32(3329); // NameId
                 poiChange.AddHostInt32(3); //ZoneId
@@ -703,7 +767,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.inShroudedGlade(PlayerPosition) < 200.0)
+            if (Map.inShroudedGlade(character.position) < 200.0)
             {
                 poiChange.AddHostInt32(3502); // NameId
                 poiChange.AddHostInt32(7); //ZoneId
@@ -711,7 +775,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.inSnowhill(PlayerPosition))
+            if (Map.inSnowhill(character.position))
             {
                 poiChange.AddHostInt32(3961); // NameId
                 poiChange.AddHostInt32(8); //ZoneId
@@ -719,7 +783,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.inWugachug(PlayerPosition))
+            if (Map.inWugachug(character.position))
             {
                 poiChange.AddHostInt32(3505); // NameId
                 poiChange.AddHostInt32(9); //ZoneId
@@ -727,7 +791,7 @@ namespace Gateway.Login
                 SendTunneledClientPacket(soeClient, poiChange.GetRaw());
             }
 
-            if (Map.SunstoneValleyMagnitude(PlayerPosition) < 600.0)
+            if (Map.SunstoneValleyMagnitude(character.position) < 600.0)
             {
                 poiChange.AddHostInt32(74159); // NameId
                 poiChange.AddHostInt32(10); //ZoneId
