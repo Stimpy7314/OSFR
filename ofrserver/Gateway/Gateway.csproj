@@ -64,7 +64,7 @@
     <Compile Include="Login\ClientPcData.cs" />
     <Compile Include="MapChat\Chat.cs" />
     <Compile Include="MapChat\Map.cs" />
-    <Compile Include="NonGameRelatedManagers\GUIDRandomizer.cs" />
+    <Compile Include="NonGameRelatedManagers\NonGameRelatedManagers.cs" />
     <Compile Include="Player\PlayerCharacter.cs" />
     <Compile Include="Player\PlayerCode.cs" />
     <Compile Include="Player\UpdateStats.cs" />
